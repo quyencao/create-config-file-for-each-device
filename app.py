@@ -27,7 +27,7 @@ def create_config_file(code, host='localhost', port=5672):
         config_tarfile = '{}.tar.gz'.format(code)
 
         with tarfile.open(config_tarfile, mode='w') as tf:
-            tf.add(config_json_file, 'config/config.json')
+            tf.add(config_json_file, os.path.join('config', 'config.json'))
 
 if __name__ == "__main__":
     device_code = '12345654321'
